@@ -11,42 +11,55 @@
   </head>
   <body>
     <div class="wrapper">
-      <div>
-        <table>
+      <div class="notes-list">
+        <table class="notes-table">
             <tr>
-              <td>Name</td>
-              <td>Created</td>
-              <td>Category</td>
-              <td>Content</td>
-              <td>Dates</td>
-              <!-- <td>&nbsp;</td> -->
+                <td>Name</td>
+                <td>Created</td>
+                <td>Category</td>
+                <td>Content</td>
+                <td>Dates</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             <tr>
-              <td>Shopping list</td>
-              <td>April 20, 2022</td>
-              <td>Task</td>
-              <td>Tomatoes, bread</td>
-              <td></td>
-              <td></td>
+                <td>Shopping list</td>
+                <td>April 20, 2022</td>
+                <td>Task</td>
+                <td>Tomatoes, bread</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>New Feature</td>
+                <td>May 05, 2022</td>
+                <td>Idea</td>
+                <td>Implement new feature 3/5/2022 and 5/5/2022</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
           </table>
       </div>
 
       <button id="myBtn">Create Note</button>
 
-      <ul class="task-box"></ul>
-
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close">&times;</span>
-          <div class="task-input">
+          <div class="notes-input">
             <input type="text" placeholder="Add a new task">
           </div>
         </div>
       
       </div>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>
