@@ -1,11 +1,11 @@
-let modal = document.getElementById('myModal');
-let openModalbtn = document.getElementById('myBtn');
-let closeModalspan = document.getElementsByClassName('close')[0];
+const modal = document.getElementById('addNoteModal');
+const openModalbtn = document.getElementById('myBtn');
+const closeModalspan = document.getElementsByClassName('close')[0];
 
-const notesInput = document.querySelector('.notes-input input'),
-notesTable= document.querySelector('.notes-table');
+const notesInput = document.querySelector('.notes-input input');
+const notesTable= document.querySelector('.notes-table');
 
-let notes = JSON.parse(localStorage.getItem('notes-list'));
+const notes = JSON.parse(localStorage.getItem('notes-list'));
 
 function showNote () {
     let noteElements = '';
@@ -34,6 +34,7 @@ function showNote () {
     });
     notesTable.innerHTML += noteElements;
 }
+
 showNote();
 
 notesInput.addEventListener('keyup', e=> {
@@ -47,7 +48,9 @@ notesInput.addEventListener('keyup', e=> {
 
         let noteInfo = {
             name: userNote,
-            createdAt: new Date(),
+            createdAt: new Date().toLocaleDateString({},
+                {timeZone:"UTC", month:"long", day:"2-digit", year:"numeric"}
+            ),
             category: 'fd',
             content: 'fds',
             dates: 'dfs'
@@ -58,17 +61,14 @@ notesInput.addEventListener('keyup', e=> {
     }
 })
 
-// When the user clicks the button, open the modal 
 openModalbtn.onclick = function() {
   modal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
 closeModalspan.onclick = function() {
   modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
