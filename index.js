@@ -22,7 +22,12 @@ addNoteForm.addEventListener('submit', event => {
     let noteName = notesNameInput.value;
     let noteCategory = selectedCategory.value;
     let noteContent = notesContentInput.value;
-    console.log(noteCategory);
+
+    let regexp = /[0-9]{2}[\-/ \.][0-9]{2}[\-/ \.][0-9]{4}/g;
+    let dateMatch = Array.from(noteContent.matchAll(regexp)).join(', ');
+    console.log(dateMatch);
+
+    // console.log(noteCategory);
     
     if (noteName && noteCategory && noteContent) {
         if (!notes) {
@@ -40,7 +45,7 @@ addNoteForm.addEventListener('submit', event => {
             ),
             category: noteCategory,
             content: noteContent,
-            dates: 'aaa'
+            dates: dateMatch
         }
 
         notes.push(noteInfo);
