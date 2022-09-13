@@ -1,4 +1,5 @@
 import { deleteNote } from "./deleteNote.mjs";
+import { editNote } from "../index.js";
 
 export const showNote = (notes, notesTable) => {
     notesTable.innerHTML = `<tr>
@@ -42,5 +43,11 @@ export const showNote = (notes, notesTable) => {
 
     Array.prototype.forEach.call(deleteImg, element => {
         element.addEventListener('click', deleteNote.bind(this));
-    });   
+    });
+
+    const editImg = document.getElementsByClassName('editImg');
+
+    Array.prototype.forEach.call(editImg, element => {
+        element.addEventListener('click', editNote.bind(this));
+    });
 }

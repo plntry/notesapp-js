@@ -1,6 +1,6 @@
 import { showNote } from "./showNote.mjs";
 import { notes } from "../data/notes.js";
-import { notesTable } from "../data/elements.js";
+import { notesTable } from "../constants/constants.js";
 
 export const deleteNote = (args) => {
     let item = args.target.parentElement.parentElement;

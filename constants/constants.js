@@ -1,7 +1,8 @@
 // Add Note Modal
 export const addNoteModal = document.getElementById('addNoteModal');
-export const openaddNoteModalbtn = document.getElementById('myBtn');
+export const openAddNoteModalbtn = document.getElementById('openAddNoteModalbtn');
 export const closeaddNoteModalspan = document.getElementsByClassName('close')[0];
+export const submitNoteBtn = document.getElementById('submit-note-btn');
 
 // User Input in Add Note Modal
 export const notesNameInput = document.querySelector('.notes-name-input input');
