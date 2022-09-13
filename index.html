@@ -1,22 +1,17 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">  
-    <title>Todo List App in JavaScript | CodingNepal</title>
+    <title>notes</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iconscout Link For Icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   </head>
   <body>
     <div class="wrapper">
       <div class="notes-list">
         <table class="notes-table"></table>
       </div>
-
       <button id="myBtn">Create Note</button>
-      
       <div id="addNoteModal" class="modal">
         <form class="addNoteForm" id="addNoteForm">
             <div class="modal-content">
@@ -33,20 +28,15 @@
                         <option value="Idea">Idea</option>
                     </select>
                 </div>
-
                 <div class="notes-content-input">
                     <label>Content</label>
                     <input type="text" placeholder="Content" required>
                 </div>
-                
                 <input type="submit" value="Create" class="submit-note-btn">
-
               </div>
         </form>
-      
       </div>
     </div>
-
     <script type="module" src="/index.js"></script>
   </body>
 </html>

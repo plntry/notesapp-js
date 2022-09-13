@@ -1,5 +1,32 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
+/* Table */
+/* table, th, td {
+  border: 3px solid black;
+  border-collapse:collapse
+
+} */
+
+th {
+  text-align: left;
+  background-color: rgb(169, 223, 177);
+  
+}
+
+table {
+  width: 100%;
+}
+
+.icon {
+  position: relative;
+  left: 53%;
+  transform: translateX(-50%);
+}
+
+.deleteImg, .archiveImg, .editImg {
+  cursor: pointer;
+}
+
 /* The Modal */
 .modal {
   display: none;
@@ -37,14 +64,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
   color: #000;
   text-decoration: none;
   cursor: pointer;
-}
-
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-  }
-
-table {
-    width: 100%;
 }
