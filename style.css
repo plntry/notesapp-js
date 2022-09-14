@@ -1,5 +1,45 @@
 body {font-family: Arial, Helvetica, sans-serif;}
 
+th {
+  text-align: left;
+  background-color: rgb(169, 223, 177);
+  
+}
+
+table {
+  width: 100%;
+}
+
+#openAddNoteModalbtn {
+  float: right;
+  padding: 4px;
+  margin-bottom: 15px;
+}
+
+.archived-category-table {
+  margin-top: 50px;
+}
+
+.icon {
+  position: relative;
+  left: 53%;
+  transform: translateX(-50%);
+}
+
+.deleteImg, .archiveImg, .editImg, .unarchiveImg {
+  cursor: pointer;
+}
+
+.archived-cell {
+  background-color: rgb(221, 198, 121);
+  cursor: pointer;
+}
+
+.category-name-archived {
+  text-align: center;
+  font-size: 1.5em;
+}
+
 /* The Modal */
 .modal {
   display: none;
@@ -22,6 +62,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 15px;
 }
 
 /* The Close Button */
@@ -30,6 +74,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   float: right;
   font-size: 28px;
   font-weight: bold;
+  align-self: flex-end;
 }
 
 .close:hover,

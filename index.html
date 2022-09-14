@@ -1,52 +1,42 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
-<html lang="en" dir="ltr">
+<html lang="en">
   <head>
     <meta charset="utf-8">  
-    <title>Todo List App in JavaScript | CodingNepal</title>
+    <title>notes</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Iconscout Link For Icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   </head>
   <body>
     <div class="wrapper">
-      <div>
-        <table>
-            <tr>
-              <td>Name</td>
-              <td>Created</td>
-              <td>Category</td>
-              <td>Content</td>
-              <td>Dates</td>
-              <!-- <td>&nbsp;</td> -->
-            </tr>
-            <tr>
-              <td>Shopping list</td>
-              <td>April 20, 2022</td>
-              <td>Task</td>
-              <td>Tomatoes, bread</td>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-      </div>
-
-      <button id="myBtn">Create Note</button>
-
-      <ul class="task-box"></ul>
-
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <div class="task-input">
-            <input type="text" placeholder="Add a new task">
-          </div>
-        </div>
-      
+      <table class="notes-table"></table>
+      <button id="openAddNoteModalbtn">Create Note</button>
+      <table class="summary-table"></table>
+      <table class="archived-category-table"></table>
+      <div id="addNoteModal" class="modal">
+        <form class="addNoteForm" id="addNoteForm">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="notes-name-input">
+                    <label>Name</label>
+                    <input type="text" placeholder="Name" required>
+                </div>
+                <div class="notes-category-select">
+                    <label>Category</label>
+                    <select name="categoryList" id="categoryList" required>
+                        <option value="Task" selected>Task</option>
+                        <option value="Random Thought">Random Thought</option>
+                        <option value="Idea">Idea</option>
+                    </select>
+                </div>
+                <div class="notes-content-input">
+                    <label>Content</label>
+                    <input type="text" placeholder="Content" required>
+                </div>
+                <input type="submit" value="Create" id="submit-note-btn">
+            </div>
+        </form>
       </div>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="/index.js"></script>
   </body>
 </html>
