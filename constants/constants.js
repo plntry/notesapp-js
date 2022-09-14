@@ -17,3 +17,9 @@ export const addNoteForm = document.getElementById('addNoteForm');
 
 // Summary Table
 export const summaryTable = document.querySelector('.summary-table');
+
+//Archived notes by category table
+export const archivedCategoryTable = document.querySelector('.archived-category-table');
+
+//categories
+export const categories = ['Task', 'Random Thought', 'Idea'];

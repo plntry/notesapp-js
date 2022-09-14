@@ -16,7 +16,12 @@ table {
   transform: translateX(-50%);
 }
 
-.deleteImg, .archiveImg, .editImg {
+.deleteImg, .archiveImg, .editImg, .unarchiveImg {
+  cursor: pointer;
+}
+
+.archived-cell {
+  background-color: rgb(221, 198, 121);
   cursor: pointer;
 }
 
