@@ -12,6 +12,7 @@ import { showNote } from "./helpers/showNote.mjs";
 
 let isEditedNote = false;
 let noteIndex = 0;
+let regexp = /[0-9]{1,2}[\-/ \.][0-9]{1,2}[\-/ \.][0-9]{4}/g;
 
 export const editNote = (args) => {
     let item = args.target.parentElement.parentElement;
@@ -38,7 +39,6 @@ addNoteForm.addEventListener('submit', event => {
     let noteCategory = selectedCategory.value;
     let noteContent = notesContentInput.value;
 
-    let regexp = /[0-9]{1,2}[\-/ \.][0-9]{1,2}[\-/ \.][0-9]{4}/g;
     let dateMatch = [...noteContent.matchAll(regexp)].join(', ');
     
     if (noteName && noteCategory && noteContent) {
@@ -46,10 +46,6 @@ addNoteForm.addEventListener('submit', event => {
             if (!notes) {
                 notes = [];
             }
-
-            notesNameInput.value = '';
-            selectedCategory.value = 'Task';
-            notesContentInput.value = '';
 
             let noteInfo = {
                 name: noteName,
@@ -68,21 +64,20 @@ addNoteForm.addEventListener('submit', event => {
             notes[noteIndex].name = noteName;
             notes[noteIndex].category = noteCategory;
             notes[noteIndex].content = noteContent;
+            notes[noteIndex].dates = [...notes[noteIndex].content.matchAll(regexp)].join(', ')
         }
-
-        notesNameInput.value = '';
-        selectedCategory.value = 'Task';
-        notesContentInput.value = '';
         
         addNoteModal.style.display = "none";
         showNote(notes, notesTable);
-
-        
 }
 });
 
 // Modal Create New Note
 openAddNoteModalbtn.onclick = function() {
+    notesNameInput.value = '';
+    selectedCategory.value = 'Task';
+    notesContentInput.value = '';
+
     submitNoteBtn.value = 'Create';
     addNoteModal.style.display = "block";
 }
