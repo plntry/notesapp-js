@@ -1,5 +1,6 @@
 import { deleteNote } from "./deleteNote.mjs";
 import { editNote } from "../index.js";
+import { archiveNote } from "./archiveNote.mjs";
 
 export const showNote = (notes, notesTable) => {
     notesTable.innerHTML = `<tr>
@@ -12,16 +13,17 @@ export const showNote = (notes, notesTable) => {
                                     <p class="icon">✏️</p>
                                 </th>
                                 <th>
-                                    <p class="icon">📁<p/>
+                                    <p class="icon">📁</p>
                                 </th>
                                 <th>
-                                    <p class="icon">🗑️<p>
+                                    <p class="icon">🗑️</p>
                                 </th>
                             </tr>`;
 
-    notes.forEach((note, id) => {
-        notesTable.innerHTML += `<tr for="${id}">
+    let notesToShow = notes.filter(note => note.status === 'active');
 
+    notesToShow.forEach((note, id) => {
+        notesTable.innerHTML += `<tr for="${id}">
                             <td>${note.name}</td>
                             <td>${note.createdAt}</td>
                             <td>${note.category}</td>
@@ -49,5 +51,11 @@ export const showNote = (notes, notesTable) => {
 
     Array.prototype.forEach.call(editImg, element => {
         element.addEventListener('click', editNote.bind(this));
+    });
+
+    const archiveImg = document.getElementsByClassName('archiveImg');
+
+    Array.prototype.forEach.call(archiveImg, element => {
+        element.addEventListener('click', archiveNote.bind(this));
     });
 }

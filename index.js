@@ -7,8 +7,10 @@ import { addNoteModal,
         notesContentInput,
         selectedCategory,
         notesTable,
+        summaryTable,
         addNoteForm } from "./constants/constants.js";
 import { showNote } from "./helpers/showNote.mjs";
+import { showSummary } from "./helpers/showSummary.mjs";
 
 let isEditedNote = false;
 let noteIndex = 0;
@@ -28,9 +30,11 @@ export const editNote = (args) => {
     addNoteModal.style.display = 'block';
 
     showNote(notes, notesTable);
+    showSummary(notes, summaryTable);
 }
 
 showNote(notes, notesTable);
+showSummary(notes, summaryTable);
 
 addNoteForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -54,9 +58,10 @@ addNoteForm.addEventListener('submit', event => {
                 ),
                 category: noteCategory,
                 content: noteContent,
-                dates: dateMatch
+                dates: dateMatch,
+                status: 'active'
             }
-
+            
             notes.push(noteInfo);
         } else {
             isEditedNote = false;
@@ -68,8 +73,10 @@ addNoteForm.addEventListener('submit', event => {
         }
         
         addNoteModal.style.display = "none";
+
         showNote(notes, notesTable);
-}
+        showSummary(notes, summaryTable);
+    }
 });
 
 // Modal Create New Note
