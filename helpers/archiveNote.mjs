@@ -8,6 +8,8 @@ export const archiveNote = (args) => {
     let item = args.target.parentElement.parentElement;
     let noteIndex = item.getAttribute('for');
 
+    console.log(notes[noteIndex]);
+
     notes[noteIndex].status = 'archived';
 
     showNote(notes, notesTable);

@@ -23,7 +23,7 @@ export const showNote = (notes, notesTable) => {
     let notesToShow = notes.filter(note => note.status === 'active');
 
     notesToShow.forEach((note, id) => {
-        notesTable.innerHTML += `<tr for="${id}">
+        notesTable.innerHTML += `<tr for="${note.id}">
                             <td>${note.name}</td>
                             <td>${note.createdAt}</td>
                             <td>${note.category}</td>

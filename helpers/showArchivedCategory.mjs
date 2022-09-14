@@ -6,7 +6,8 @@ export const showArchivedCategory = (args) => {
     let item = args.target.parentElement;
     let categoryIndex = item.getAttribute('for');
 
-    archivedCategoryTable.innerHTML = `<tr>
+    archivedCategoryTable.innerHTML = `<h1 class="category-name-archived" id="category-name-archived">Archived ${categories[categoryIndex]}s</h1>
+                                        <tr id="archived-category-table">
                                             <th>Name</th>
                                             <th>Created</th>
                                             <th>Category</th>

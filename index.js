@@ -52,6 +52,7 @@ addNoteForm.addEventListener('submit', event => {
             }
 
             let noteInfo = {
+                id: Math.max(...notes.map(note => note.id)) + 1,
                 name: noteName,
                 createdAt: new Date().toLocaleDateString({},
                     {timeZone:"UTC", month:"long", day:"2-digit", year:"numeric"}
@@ -61,7 +62,8 @@ addNoteForm.addEventListener('submit', event => {
                 dates: dateMatch,
                 status: 'active'
             }
-            
+
+            console.log(noteInfo);
             notes.push(noteInfo);
         } else {
             isEditedNote = false;
